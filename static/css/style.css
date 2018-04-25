@@ -19,6 +19,10 @@ body {
   background-color: #f2f2f2;
 }
 
+pre {
+  border: none;
+}
+
 ::-webkit-scrollbar {
   width: 0px
 }

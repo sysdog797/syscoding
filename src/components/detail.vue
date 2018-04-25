@@ -20,19 +20,20 @@
       <div class="article-info">
         <div class="info-box">
           <div class="author-avator">
-            <a target="_blank" :href="'https://github.com/'+data.user.login">
+            <a target="_blank" :href="'https://github.com/'+data.user">
               <img :src="'/static/images/author'+data.number+'.jpeg'">
             </a>
           </div>
-          <div class="author-name">{{data.user.login}}</div>
+          <div class="author-name">{{data.user}}</div>
           <span class="dot">·</span>
-          <i>{{data.created_at}}</i>
+          <i>{{data.created}}</i>
         </div>
       </div>
     </div>
     <!-- main-container -->
     <div class="main-container">
-      <div class="content">{{data.body}}</div>
+      <div class="content" v-html="data.html" v-highlight>
+      </div>
     </div>
   </div>
 </template>
@@ -46,15 +47,13 @@ export default {
   },
   created: function() {
     var _this = this;
-    var url =
-      "https://api.github.com/repos/Ganother/blog/issues/" +
-      this.$route.params.id;
+    var url = "/api/getArticle/" + this.$route.params.id;
     var ajax = $.ajax({
       type: "GET",
       url: url,
       success: function(resp) {
         if (resp) {
-          //console.log(resp);
+          console.log(resp);
           _this.data = resp;
         } else {
           console.log("no article");
