@@ -1,0 +1,24 @@
+html {
+  overflow-y: scroll;
+  font-size: 20px;
+}
+
+:root {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+:root body {
+  position: absolute;
+}
+
+body {
+  width: 100vw;
+  overflow: hidden;
+  margin-bottom: -250px;
+  background-color: #f2f2f2;
+}
+
+::-webkit-scrollbar {
+  width: 0px
+}
