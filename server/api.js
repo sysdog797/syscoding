@@ -1,4 +1,3 @@
-const models = require('./db');
 const express = require('express');
 
 var moment = require('moment'); //时间控件
@@ -17,7 +16,7 @@ router.get('/api/getArticle/:id', (req, res) => {
   var id = req.params.id;
   console.log('request begin...')
   var options = {
-    url: 'https://api.github.com/repos/Ganother/blog/issues/' + id,
+    url: 'https://api.github.com/repos/sysdog797/syscoding/issues/' + id,
     headers: {
       'User-Agent': 'request'
     }
